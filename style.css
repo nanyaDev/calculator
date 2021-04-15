@@ -1,0 +1,24 @@
+#calculator {
+  height: 80vh;
+  width: 60vh;
+  margin: 10vh auto;
+  border: 1px solid red; 
+  display: grid;
+  grid-template-columns: repeat(4,25%);
+  grid-template-rows: repeat(6,100/6%);
+}
+
+#calculator > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+}
+
+#output {
+  grid-column-start: span 4;
+}
+
+#zero {
+  grid-column-start: span 2;
+}

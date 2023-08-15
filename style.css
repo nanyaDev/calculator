@@ -1,24 +1,75 @@
-#calculator {
-  height: 80vh;
-  width: 60vh;
-  margin: 10vh auto;
-  border: 1px solid red; 
-  display: grid;
-  grid-template-columns: repeat(4,25%);
-  grid-template-rows: repeat(6,100/6%);
-}
-
-#calculator > * {
+body {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
+  background-color: #B2B2B2;
+}
+
+#phone {
+  height: 80vh;
+  aspect-ratio: 9 / 19.5; /* iPhone 12 mini */
+  border: 16px solid white;
+  border-radius: 64px;
+  background-color: #EEF1F2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#notch {
+  height: 3vh;
+  background-color: white;
+  margin: 0 25%;
+  border-radius: 0 0 16px 16px;
+}
+
+#calculator {
+  flex-grow: 1;
+  padding: 0 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 48px;
+}
+
+#buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5);
+  grid-gap: 5%;
+}
+
+#buttons > button {
+  aspect-ratio: 1 / 1;
+  border: none;
+  border-radius: 35%;
+  background-color: #EEF1F2;
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  box-shadow: 4px 4px 8px 0px #CADAE4, -4px -4px 8px 0px #FFF;
+  font-family: 'Fira Code', monospace;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  color: #5D6162;
+
+}
+
+#buttons > button.op {
+  background-color: #FFEDD1;
 }
 
 #output {
-  grid-column-start: span 4;
+  color: #5D6162;
+  text-align: right;
+  font-family: 'Fira Code', monospace;
+  font-size: 128px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 128px;
+  height: 128px;
 }
 
-#zero {
-  grid-column-start: span 2;
+#buttons > button.pressed {
+  box-shadow: 4px 4px 8px 0px #CADAE4 inset, -4px -4px 8px 0px #FFF inset;
 }

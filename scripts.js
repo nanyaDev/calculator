@@ -1,8 +1,16 @@
-const calc = document.querySelector('#calculator');
-const buttons = calc.querySelectorAll('button');
+let keypress = new Audio('./keypress.mp3');
 
-buttons.forEach(button=> {
+document.querySelectorAll('button').forEach(button=> {
+  button.addEventListener('mousedown', e => {
+    e.target.classList.add('pressed');
+  })
+
+  button.addEventListener('mouseup', e => {
+    e.target.classList.remove('pressed');
+  })
+
   button.addEventListener('click', e => {
+    keypress.play();
     processClick(e.target);
   })
 });
@@ -59,10 +67,10 @@ const operate = () => {
     case '-':
       acc -= num;
       break;
-    case '*':
+    case '×':
       acc *= num;
       break;
-    case '/': 
+    case '÷': 
       acc /= num;
       break;
   } 
